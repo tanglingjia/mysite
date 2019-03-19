@@ -1,0 +1,32 @@
+<mat-drawer-container class="utilities">
+  <mat-drawer class="type" mode="side" opened>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Regular
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-button (click)="turnToUtility()" routerLink="timestamp">
+            <span>linux时间戳</span>
+          </button>
+          <button mat-button (click)="turnToUtility()" routerLink="compare">
+            <span>文字对比</span>
+          </button>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Second
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>The second one</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+  </mat-drawer>
+  <mat-drawer-content class="content">
+    <div *ngIf="showTips">平常经常会用到的工具都会放到这里</div>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

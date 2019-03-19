@@ -1,0 +1,16 @@
+<div>
+  <input class="txttimestamp" matInput placeholder="输入时间戳（秒）如946656000" [(ngModel)]="currentTimestamp">
+</div>
+<div>
+  <mat-button-toggle-group class="translate">
+    <mat-button-toggle class="tranbutton" (click)="translateToTime()">
+      <mat-icon>arrow_downward</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle class="tranbutton" (click)="translateToTimestamp()">
+      <mat-icon>arrow_upward</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<div>
+  <input class="txttime" matInput placeholder="输入时间格式如2000-01-01 00:00:00" [(ngModel)]="currentTime">
+</div>
