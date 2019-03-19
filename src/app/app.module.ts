@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy,LocationStrategy } from "@angular/common"
+
 import {MatButtonModule, MatCheckboxModule, MatMenuModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -18,8 +20,6 @@ import { GamesComponent } from './games/games.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { TimestampComponent } from './utilities/timestamp/timestamp.component';
 import { CompareComponent } from './utilities/compare/compare.component';
-
-// import { CodemirrorModule } from 'ng2-codemirror';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,6 @@ import { CompareComponent } from './utilities/compare/compare.component';
     MatRadioModule,
     MatButtonToggleModule,
     FormsModule
-    // CodemirrorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

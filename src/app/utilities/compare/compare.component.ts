@@ -20,9 +20,7 @@ export class CompareComponent implements OnInit {
     });
   }
   
-  constructor() {
-    
-  }
+  constructor() {}
 
   ngOnInit() {
     this.initUI();
