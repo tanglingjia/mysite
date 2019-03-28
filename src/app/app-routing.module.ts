@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LingjiaComponent } from './lingjia/lingjia.component';
 import { UtilitiesComponent } from './utilities/utilities.component';
 import { TimestampComponent } from './utilities/timestamp/timestamp.component';
+import { NumberComponent } from './utilities/number/number.component';
 import { CompareComponent } from './utilities/compare/compare.component';
 import { GamesComponent } from './games/games.component';
 
@@ -14,7 +15,8 @@ const routes: Routes = [
     component: UtilitiesComponent,
     children: [
       { path: 'timestamp', component: TimestampComponent},
-      { path: 'compare', component: CompareComponent}
+      { path: 'compare', component: CompareComponent},
+      { path: 'number', component: NumberComponent}
     ]
   },
   { path: 'games', component: GamesComponent }

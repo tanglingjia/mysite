@@ -1,0 +1,13 @@
+<mat-select class="numberconvert" [(value)]="sourceType">
+  <mat-option *ngFor="let item of sourceItems" [value]="item.value" [disabled]="item.disabled" (click)="changeSource(item)">
+    {{item.text}}
+  </mat-option>
+</mat-select>
+<input class="txtsource" matInput placeholder="输入要转化的数字" [(ngModel)]="sourceNumber">
+<button class="transfer" mat-mini-fab (click)="translate()">转化</button>
+<mat-select class="numberconvert" [(value)]="targetType">
+  <mat-option *ngFor="let item of targetItems" [value]="item.value" [disabled]="item.disabled">
+    {{item.text}}
+  </mat-option>
+</mat-select>
+<input class="txttarget" matInput [(ngModel)]="targetNumber">
