@@ -12,6 +12,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {FormsModule} from '@angular/forms'
 import {MatSelectModule} from '@angular/material/select';
+import {MatTreeModule} from '@angular/material/tree';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { TimestampComponent } from './utilities/timestamp/timestamp.component';
 import { CompareComponent } from './utilities/compare/compare.component';
 import { NumberComponent } from './utilities/number/number.component';
+import { JsonformatComponent } from './utilities/jsonformat/jsonformat.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { NumberComponent } from './utilities/number/number.component';
     GamesComponent,
     TimestampComponent,
     CompareComponent,
-    NumberComponent
+    NumberComponent,
+    JsonformatComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { NumberComponent } from './utilities/number/number.component';
     MatRadioModule,
     MatButtonToggleModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

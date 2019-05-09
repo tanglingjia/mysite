@@ -1,0 +1,50 @@
+
+.jf {
+  height: calc(100% - 40px);
+  width: 100%;
+  .jfinput {
+    width: 48%;
+    float: left;
+    height: 100%;
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .jfresult {
+    height: 100%;
+    width: 48%;
+    float: left;
+    margin-left: 2%;
+    padding-bottom: 10px;
+    .jfresulttree {
+      height: 100%;
+      overflow: scroll;
+    }
+  }
+  .jfexception {
+    width: 48%;
+    float: left;
+    margin-left: 2%;
+    height: 100%;
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.childindex {
+  color: green;
+}
+.jfstring {
+  color:blue;
+}
+.jfnumber {
+  color:brown;
+}
+.jfboolean {
+  color:orangered;
+}
+.jfnull {
+  color:purple;
+}

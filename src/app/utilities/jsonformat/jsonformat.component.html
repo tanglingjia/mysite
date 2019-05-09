@@ -1,0 +1,36 @@
+<div class="jf">
+  <div class="jfinput">
+    <textarea matInput [(ngModel)]="inputJson" (ngModelChange)="changeInput()"></textarea>
+  </div>
+  <div *ngIf="inputJsonException===''" class="jfresult">
+    <mat-tree class="jfresulttree" [dataSource]="dataSource" [treeControl]="treeControl">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <!-- use a disabled button to provide padding for tree leaf -->
+        <button mat-icon-button disabled></button>
+        <span *ngIf="node.childIndex" [ngClass]="{'childindex':node.childIndex}">{{node.childIndex}}</span>
+        {{ node.childIndex ? '&nbsp;' : '' }}
+        <span *ngIf="node.hasOwnProperty('field')">{{node.field}}</span>
+        {{ (node.field && node.hasOwnProperty('value')) ? '&nbsp;:&nbsp;' : '' }}
+        <span *ngIf="node.hasOwnProperty('value')" [ngClass] ="{'jfstring':node.childType==='string','jfnumber':node.childType==='number','jfboolean':node.childType==='boolean','jfnull':node.childType==='object'}">{{node.value}}</span>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        <span *ngIf="node.hasOwnProperty('childIndex')" [ngClass]="{'childindex':node.childIndex}">{{node.childIndex}}</span>
+        {{ node.childIndex ? '&nbsp;' : '' }}
+        <span *ngIf="node.hasOwnProperty('field')">{{node.field}}</span>
+        {{ (node.field && node.value) ? '&nbsp;:&nbsp;' : '' }}
+        <span *ngIf="node.hasOwnProperty('value')">{{node.value}}</span>
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+  <div *ngIf="inputJsonException!==''" class="jfexception">
+    <textarea matInput [(ngModel)]="inputJsonException"></textarea>
+  </div>
+</div>
